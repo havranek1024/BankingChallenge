@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\BankingChallenge.Core\BankingChallenge.Application.csproj" />
+    <ProjectReference Include="..\..\src\BankingChallenge.Application\BankingChallenge.Application.csproj" />
   </ItemGroup>
 
 </Project>

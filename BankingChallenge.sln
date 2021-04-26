@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BankingChallenge.Api", "src
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{58C57601-AF5F-413B-AC8C-60B2C2D4FF6E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BankingChallenge.Application", "src\BankingChallenge.Core\BankingChallenge.Application.csproj", "{7B9AAFAB-CE5C-430E-8F25-402A5D3F906C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BankingChallenge.Application", "src\BankingChallenge.Application\BankingChallenge.Application.csproj", "{7B9AAFAB-CE5C-430E-8F25-402A5D3F906C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{3838C834-C9CE-45BD-8483-E627605D7D6B}"
 EndProject
