@@ -1,16 +1,11 @@
-﻿namespace BankingChallenge.Application.Models
+﻿namespace BankingChallenge.Application.Entities
 {
-    public class LoanTerms
+    public record LoanTerms(decimal AnnualInterestRate, decimal AdministrationFeePercent, decimal AdministrationFeeMaxAmount)
     {
-        public static readonly LoanTerms Default = new LoanTerms
-        {
-            AnnualInterestRate = 5,
-            AdministrationFeePercent = 1,
-            AdministrationFeeMaxAmount = 10000
-        };
-
-        public decimal AnnualInterestRate { get; set; }
-        public decimal AdministrationFeePercent { get; set; }
-        public decimal AdministrationFeeMaxAmount { get; set; }
+        public static readonly LoanTerms Default = new(
+            AnnualInterestRate: 5,
+            AdministrationFeePercent: 1,
+            AdministrationFeeMaxAmount: 10000
+        );
     }
 }

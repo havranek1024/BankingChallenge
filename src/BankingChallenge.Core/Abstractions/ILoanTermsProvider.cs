@@ -1,4 +1,4 @@
-﻿using BankingChallenge.Application.Models;
+﻿using BankingChallenge.Application.Entities;
 
 namespace BankingChallenge.Application.Abstractions
 {

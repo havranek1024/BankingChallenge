@@ -1,5 +1,5 @@
 ﻿using BankingChallenge.Application.Abstractions;
-using BankingChallenge.Application.Models;
+using BankingChallenge.Application.Entities;
 using Microsoft.Extensions.Configuration;
 
 namespace BankingChallenge.Application.Infrastructure
@@ -23,12 +23,12 @@ namespace BankingChallenge.Application.Infrastructure
                 return defaultTerms;
             }
 
-            return new LoanTerms
-            {
-                AnnualInterestRate = configuredTerms.AnnualInterestRate ?? defaultTerms.AnnualInterestRate,
-                AdministrationFeePercent = configuredTerms.AdministrationFeePercent ?? defaultTerms.AdministrationFeePercent,
-                AdministrationFeeMaxAmount = configuredTerms.AdministrationFeeMaxAmount ?? defaultTerms.AdministrationFeeMaxAmount,
-            };
+            return new LoanTerms(
+            
+                AnnualInterestRate: configuredTerms.AnnualInterestRate ?? defaultTerms.AnnualInterestRate,
+                AdministrationFeePercent: configuredTerms.AdministrationFeePercent ?? defaultTerms.AdministrationFeePercent,
+                AdministrationFeeMaxAmount: configuredTerms.AdministrationFeeMaxAmount ?? defaultTerms.AdministrationFeeMaxAmount
+            );
         }
 
         private class LoanTermsSettingsModel
