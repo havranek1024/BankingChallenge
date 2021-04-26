@@ -1,5 +1,5 @@
-﻿using BankingChallenge.Core.Abstractions;
-using BankingChallenge.Core.DTO;
+﻿using BankingChallenge.Application.Abstractions;
+using BankingChallenge.Application.DTO;
 using Microsoft.AspNetCore.Mvc;
 using System.Net.Mime;
 

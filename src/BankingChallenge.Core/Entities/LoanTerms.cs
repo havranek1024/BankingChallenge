@@ -1,4 +1,4 @@
-﻿namespace BankingChallenge.Core.Models
+﻿namespace BankingChallenge.Application.Models
 {
     public class LoanTerms
     {
@@ -8,7 +8,7 @@
             AdministrationFeePercent = 1,
             AdministrationFeeMaxAmount = 10000
         };
-        
+
         public decimal AnnualInterestRate { get; set; }
         public decimal AdministrationFeePercent { get; set; }
         public decimal AdministrationFeeMaxAmount { get; set; }

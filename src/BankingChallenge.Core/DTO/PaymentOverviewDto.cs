@@ -1,4 +1,4 @@
-﻿namespace BankingChallenge.Core.DTO
+﻿namespace BankingChallenge.Application.DTO
 {
     public class PaymentOverviewDto
     {

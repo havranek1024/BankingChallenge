@@ -1,8 +1,8 @@
-﻿using BankingChallenge.Core.Abstractions;
-using BankingChallenge.Core.Models;
+﻿using BankingChallenge.Application.Abstractions;
+using BankingChallenge.Application.Models;
 using Microsoft.Extensions.Configuration;
 
-namespace BankingChallenge.Infrastructure
+namespace BankingChallenge.Application.Infrastructure
 {
     public class AppSettingsLoanTermsProvider : ILoanTermsProvider
     {

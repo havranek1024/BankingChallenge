@@ -1,6 +1,6 @@
-﻿using BankingChallenge.Core.Models;
+﻿using BankingChallenge.Application.Models;
 
-namespace BankingChallenge.Core.Abstractions
+namespace BankingChallenge.Application.Abstractions
 {
     public interface ILoanTermsProvider
     {

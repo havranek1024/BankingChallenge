@@ -1,6 +1,6 @@
-﻿using BankingChallenge.Core.DTO;
+﻿using BankingChallenge.Application.DTO;
 
-namespace BankingChallenge.Core.Abstractions
+namespace BankingChallenge.Application.Abstractions
 {
     public interface ILoanService
     {

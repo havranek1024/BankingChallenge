@@ -9,8 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BankingChallenge.Core\BankingChallenge.Core.csproj" />
-    <ProjectReference Include="..\BankingChallenge.Infrastructure\BankingChallenge.Infrastructure.csproj" />
+    <ProjectReference Include="..\BankingChallenge.Core\BankingChallenge.Application.csproj" />
   </ItemGroup>
 
 </Project>

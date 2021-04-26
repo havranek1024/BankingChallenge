@@ -1,6 +1,4 @@
-using BankingChallenge.Core.Abstractions;
-using BankingChallenge.Core.Services;
-using BankingChallenge.Infrastructure;
+using BankingChallenge.Application;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
@@ -19,8 +17,7 @@ namespace BankingChallenge
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "BankingChallenge", Version = "v1" });
             });
 
-            services.AddInfrastructure();
-            services.AddTransient<ILoanService, LoanService>();
+            services.AddApplication();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
