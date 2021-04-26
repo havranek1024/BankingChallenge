@@ -1,3 +1,4 @@
+using BankingChallenge.Api.Middleware;
 using BankingChallenge.Application;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -17,14 +18,17 @@ namespace BankingChallenge
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "BankingChallenge", Version = "v1" });
             });
 
+            services.AddScoped<ErrorHandlerMiddleware>();
+
             services.AddApplication();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseMiddleware<ErrorHandlerMiddleware>();
+
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "BankingChallenge v1"));
             }
