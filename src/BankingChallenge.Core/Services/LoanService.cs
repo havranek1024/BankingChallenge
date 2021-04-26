@@ -21,7 +21,7 @@ namespace BankingChallenge.Application.Services
 
             return new PaymentOverviewDto
             {
-                EffectiveApr = 5,
+                EffectiveApr = FormatAmount(loan.CalculateEffectiveApr()),
                 MonthlyCost = FormatAmount(loan.Installment),
                 TotalInterestAmount = FormatAmount(loan.CalculateTotalInterest()),
                 TotalAdministrativeAmount = FormatAmount(loan.CalculateAdministrationFee())

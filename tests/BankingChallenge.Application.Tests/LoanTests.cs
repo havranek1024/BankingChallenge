@@ -69,5 +69,13 @@ namespace BankingChallenge.Application.Tests
         {
             Assert.AreEqual(5303.28, (double)_loan.Installment, 0.005);
         }
+
+        [Test]
+        public void CalculateEffectiveApr_Should_ReturnCorrectAmount()
+        {
+            var effectiveApr = _loan.CalculateEffectiveApr();
+            
+            Assert.AreEqual(5.35, (double)effectiveApr, 0.005);
+        }
     }
 }

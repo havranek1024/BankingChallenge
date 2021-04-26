@@ -3,8 +3,6 @@ using System;
 
 namespace BankingChallenge.Application.Entities
 {
-    // calculations taken from https://www.youtube.com/watch?v=3WK3Bc07MJw
-
     public class Loan
     {
         private decimal? _installment;
@@ -55,8 +53,58 @@ namespace BankingChallenge.Application.Entities
             return totalInterest;
         }
 
+        public decimal CalculateEffectiveApr()
+        {
+            // formulas taken from https://www.omnicalculator.com/finance/apr
+
+            var apr = CalculateApr();
+
+            var periodicApr = 1 + apr / (12 * 100);
+            var effectiveApr = (decimal)Math.Pow((double)periodicApr, 12) - 1;
+
+            return effectiveApr * 100;
+        }
+
+        private decimal CalculateApr()
+        {
+            var guess = Terms.AnnualInterestRate;
+            var difference = 1m;
+            var amountToAdd = 0.0001m;
+
+            var borrowedAmount = Amount - CalculateAdministrationFee();
+
+            while (difference != 0)
+            {
+                var terms = new LoanTerms(guess, 0, 0);
+                var loan = new Loan(borrowedAmount, DurationInMonths, terms);
+
+                difference = Installment - loan.Installment;
+
+                if (difference <= 0.0000001m && difference >= -0.0000001m)
+                {
+                    break;
+                }
+
+                if (difference > 0)
+                {
+                    amountToAdd = amountToAdd * 2;
+                    guess = guess + amountToAdd;
+                }
+
+                else
+                {
+                    amountToAdd = amountToAdd / 2;
+                    guess = guess - amountToAdd;
+                }
+            }
+
+            return guess;
+        }
+
         private decimal CalculateInstallment()
         {
+            // formulas taken from https://www.youtube.com/watch?v=3WK3Bc07MJw
+
             var interestMultiplier = 1 + Terms.AnnualInterestRate / (12 * 100);
             var powerOfInterest = (decimal)Math.Pow((double)interestMultiplier, DurationInMonths);
 
