@@ -1,6 +1,7 @@
 ﻿using BankingChallenge.Application.Abstractions;
 using BankingChallenge.Application.DTO;
 using BankingChallenge.Application.Entities;
+using System;
 
 namespace BankingChallenge.Application.Services
 {
@@ -21,10 +22,12 @@ namespace BankingChallenge.Application.Services
             return new PaymentOverviewDto
             {
                 EffectiveApr = 5,
-                MonthlyCost = loan.Installment,
-                TotalInterestAmount = loan.CalculateTotalInterest(),
-                TotalAdministrativeAmount = loan.CalculateAdministrationFee()
+                MonthlyCost = FormatAmount(loan.Installment),
+                TotalInterestAmount = FormatAmount(loan.CalculateTotalInterest()),
+                TotalAdministrativeAmount = FormatAmount(loan.CalculateAdministrationFee())
             };
         }
+
+        private decimal FormatAmount(decimal amount) => Math.Round(amount, 2);
     }
 }

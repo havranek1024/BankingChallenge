@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BankingChallenge.Applicatio
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{3838C834-C9CE-45BD-8483-E627605D7D6B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankingChallenge.Application.Tests", "tests\BankingChallenge.Application.Tests\BankingChallenge.Application.Tests.csproj", "{0908B3CF-315C-40D2-AC4C-7DDBECDFCC43}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{7B9AAFAB-CE5C-430E-8F25-402A5D3F906C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B9AAFAB-CE5C-430E-8F25-402A5D3F906C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B9AAFAB-CE5C-430E-8F25-402A5D3F906C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0908B3CF-315C-40D2-AC4C-7DDBECDFCC43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0908B3CF-315C-40D2-AC4C-7DDBECDFCC43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0908B3CF-315C-40D2-AC4C-7DDBECDFCC43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0908B3CF-315C-40D2-AC4C-7DDBECDFCC43}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +38,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{4BB0A863-9031-4290-B79B-18841FD631A8} = {58C57601-AF5F-413B-AC8C-60B2C2D4FF6E}
 		{7B9AAFAB-CE5C-430E-8F25-402A5D3F906C} = {58C57601-AF5F-413B-AC8C-60B2C2D4FF6E}
+		{0908B3CF-315C-40D2-AC4C-7DDBECDFCC43} = {3838C834-C9CE-45BD-8483-E627605D7D6B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C92A49A9-F04C-4B81-983A-57D5D0E097E6}

@@ -9,9 +9,9 @@ namespace BankingChallenge.Application.Entities
     {
         private decimal? _installment;
 
+        public LoanTerms Terms { get; private set; }
         public decimal Amount { get; private set; }
         public int DurationInMonths { get; private set; }
-        public LoanTerms Terms { get; private set; }
         public decimal Installment => _installment ??= CalculateInstallment();
 
         public static Loan Create(decimal amount, int durationInMonths, LoanTerms terms)
@@ -21,9 +21,14 @@ namespace BankingChallenge.Application.Entities
                 throw new ValidationException("Loan amount must be greater than 0");
             }
 
-            if(durationInMonths <= 0)
+            if (durationInMonths <= 0)
             {
                 throw new ValidationException("Loan duration must be at least one month");
+            }
+
+            if (terms == null)
+            {
+                throw new ValidationException("Loan terms must be provided");
             }
 
             return new Loan(amount, durationInMonths, terms);
