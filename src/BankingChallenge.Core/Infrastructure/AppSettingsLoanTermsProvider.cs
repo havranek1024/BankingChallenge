@@ -17,7 +17,7 @@ namespace BankingChallenge.Application.Infrastructure
         {
             var defaultTerms = LoanTerms.Default;
 
-            var configuredTerms = _configuration.GetValue<LoanTermsSettingsModel>("LoanTerms");
+            var configuredTerms = _configuration.GetSection("LoanTerms").Get<LoanTermsSettingsModel>();
             if (configuredTerms == null)
             {
                 return defaultTerms;
